@@ -11,72 +11,34 @@ repository    : "everyday6407/everyday6407.github.io"
 
 # Sidebar / Author profile
 author:
-  avatar     : "profile.png"        # put your headshot at /profile.png or update the path
-  name       : "Rui Sun"
-  pronouns   :
-  bio        : "Economist and data scientist. Teaching and research."
-  location   : "New York, NY"
-  employer   :
-  uri        :
-  email      : "rsun2@gradcenter.cuny.edu"
+  avatar   : "profile.png"         # place your headshot at repo root or /images/profile.png
+  name     : "Rui Sun"
+  bio      : ""                    # keep empty for a clean sidebar
+  email    : "rsun2@gradcenter.cuny.edu"
+  # icons under the photo
+  linkedin : "your-linkedin-handle"  # e.g. linkedin.com/in/your-handle (just the handle)
+  github   : "everyday6407"
 
-  # Academic profiles (remove any you do not use)
-  googlescholar :
-  orcid         :
-  pubmed        :
-
-  # Repositories and software
-  github    : "everyday6407"
-
-  # Social (leave blank to hide)
-  bluesky   :
-  linkedin  :
-  twitter   :
-  google_plus:
-  youtube   :
-
-# Publication Category headings
+# Publication Category headings (keep defaults even if unused)
 publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'
-  conferences:
-    title: 'Conference Papers'
+  books:        { title: "Books" }
+  manuscripts:  { title: "Journal Articles" }
+  conferences:  { title: "Conference Papers" }
 
 # Site Settings
-teaser              :
-breadcrumbs         : false
-words_per_minute    : 160
-future              : true
-read_more           : "disabled"
-talkmap_link        : false
+breadcrumbs      : false
+words_per_minute : 160
+future           : true
+read_more        : "disabled"
+talkmap_link     : false
 
-comments:
-  provider          :
+comments: { provider: }
 
-atom_feed:
-  hide              : false
-  path              :
-
-# SEO / Analytics
-google_site_verification :
-bing_site_verification   :
-alexa_site_verification  :
-yandex_site_verification :
-analytics:
-  provider          : "false"
-  google:
-    tracking_id     :
+atom_feed: { hide: false, path: }
 
 # Reading Files
-include:
-  - .htaccess
-  - _pages
-  - files
+include: [ .htaccess, _pages, files ]
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
   - .asset-cache
   - .bundle
   - .github
@@ -86,118 +48,58 @@ exclude:
   - assets/js/plugins
   - assets/js/vendor
   - CHANGELOG
-  - Capfile
-  - config
   - Dockerfile
   - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - local
-  - log
   - node_modules
-  - package.json*
-  - Rakefile
   - README
   - tmp
   - vendor
-keep_files:
-  - .git
-  - .svn
+keep_files: [ .git, .svn ]
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
 markdown          : kramdown
 highlighter       : rouge
-lsi               : false
 excerpt_separator : "\n\n"
-incremental       : false
 
-# Markdown Processing
 kramdown:
-  input          : GFM
-  hard_wrap      : false
-  auto_ids       : true
-  footnote_nr    : 1
-  entity_output  : as_char
-  toc_levels     : 1..6
-  smart_quotes   : lsquo,rsquo,ldquo,rdquo
-  enable_coderay : false
+  input        : GFM
+  hard_wrap    : false
+  auto_ids     : true
+  footnote_nr  : 1
+  entity_output: as_char
+  toc_levels   : 1..6
+  smart_quotes : lsquo,rsquo,ldquo,rdquo
 
-# Collections used by AcademicPages
+# Collections (leave; template expects these)
 collections:
-  teaching:
-    output: true
-    permalink: /:collection/:path/
-  publications:
-    output: true
-    permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
-  talks:
-    output: true
-    permalink: /:collection/:path/
+  teaching:     { output: true, permalink: /:collection/:path/ }
+  publications: { output: true, permalink: /:collection/:path/ }
+  portfolio:    { output: true, permalink: /:collection/:path/ }
+  talks:        { output: true, permalink: /:collection/:path/ }
 
-# Defaults for layouts
+# Defaults
 defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
+  - scope: { path: "", type: posts }
+    values: { layout: single, author_profile: true, read_time: true, comments: true, share: true, related: true }
+  - scope: { path: "", type: pages }
+    values: { layout: single, author_profile: true }
+  - scope: { path: "", type: teaching }
+    values: { layout: single, author_profile: true, share: true, comments: true }
+  - scope: { path: "", type: publications }
+    values: { layout: single, author_profile: true, share: true, comments: true }
+  - scope: { path: "", type: portfolio }
+    values: { layout: single, author_profile: true, share: true, comment: true }
+  - scope: { path: "", type: talks }
+    values: { layout: talk, author_profile: true, share: true }
 
 # Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed
+sass: { sass_dir: _sass, style: compressed }
 
 # Output
-permalink     : /:categories/:title/
-timezone      : Etc/UTC
+permalink : /:categories/:title/
+timezone  : Etc/UTC
 
 # Plugins (GitHub Pages–safe)
 plugins:
@@ -217,15 +119,10 @@ whitelist:
   - jemoji
 
 # Archives
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+category_archive: { type: liquid, path: /categories/ }
+tag_archive:      { type: liquid, path: /tags/ }
 
 # HTML Compression
 compress_html:
   clippings: all
-  ignore:
-    envs: development
+  ignore: { envs: development }
