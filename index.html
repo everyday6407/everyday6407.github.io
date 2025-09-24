@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rui Sun</title>
 
-  <!-- Bootstrap 5 CSS (CDN) -->
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Minimal custom styles to match a clean academic look -->
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; }
-    .site-header { padding: 2rem 0 1rem; }
-    .site-title { font-size: 1.75rem; font-weight: 600; margin: 0; }
-    .site-subtitle { color:#555; margin-top:.25rem; }
-    .container-narrow { max-width: 900px; }
-    footer { color:#777; font-size:.95rem; padding:2rem 0; }
-    /* remove link underline in nav tabs */
-    .nav-tabs .nav-link { text-decoration: none; }
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif}
+    .container-narrow{max-width:980px}
+    .site-header{padding:1.25rem 0; border-bottom:1px solid #e5e5e5}
+    .site-title{font-size:1.6rem; font-weight:600; margin:0}
+    .site-subtitle{color:#555; margin-top:.25rem}
+    .left-col{max-width:260px}
+    .headshot{width:100%; border:1px solid #ddd; border-radius:.25rem}
+    footer{color:#777; font-size:.95rem; padding:2rem 0}
+    .nav-tabs .nav-link{ text-decoration:none }
   </style>
 </head>
 <body>
-
   <main class="container container-narrow">
 
     <!-- Header -->
@@ -33,35 +32,71 @@
     </header>
 
     <!-- Tabs -->
-    <ul class="nav nav-tabs mt-3" id="mainTabs" role="tablist">
+    <ul class="nav nav-tabs mt-3" id="tabs" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="research-tab" data-bs-toggle="tab" data-bs-target="#research" type="button" role="tab" aria-controls="research" aria-selected="true">Research</button>
+        <button class="nav-link active" id="me-tab" data-bs-toggle="tab" data-bs-target="#me" type="button" role="tab" aria-controls="me" aria-selected="true">Me</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="research-tab" data-bs-toggle="tab" data-bs-target="#research" type="button" role="tab" aria-controls="research" aria-selected="false">Research</button>
       </li>
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="teaching-tab" data-bs-toggle="tab" data-bs-target="#teaching" type="button" role="tab" aria-controls="teaching" aria-selected="false">Teaching</button>
       </li>
     </ul>
 
-    <!-- Tab contents -->
-    <div class="tab-content pt-4" id="mainTabsContent">
-      <!-- Research -->
-      <div class="tab-pane fade show active" id="research" role="tabpanel" aria-labelledby="research-tab" tabindex="0">
-        <h2 class="h4 mb-3">Research</h2>
-        <p class="mb-3">Brief summary of interests or current work goes here. You can replace all placeholder items below.</p>
+    <!-- Tab content -->
+    <div class="tab-content pt-4" id="tabsContent">
 
-        <!-- sample structure; keep format, replace content -->
+      <!-- Me -->
+      <div class="tab-pane fade show active" id="me" role="tabpanel" aria-labelledby="me-tab" tabindex="0">
+        <div class="row g-4">
+          <div class="col-md-4 left-col">
+            <!-- Replace profile.png with your own image file or remove the img tag -->
+            <img src="profile.png" alt="Rui Sun headshot" class="headshot mb-3">
+            <p class="mb-1">Economist & Data Scientist</p>
+            <p class="mb-1">New York, NY</p>
+            <div class="small">
+              <a href="mailto:rsun2@gradcenter.cuny.edu">rsun2@gradcenter.cuny.edu</a>
+            </div>
+            <div class="small mt-2">
+              <!-- Add or remove links as you like -->
+              <a href="#" target="_blank">Google Scholar</a> |
+              <a href="#" target="_blank">CV</a>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h2 class="h4">About me</h2>
+            <p>Write a short paragraph here. For example: I’m a Ph.D. candidate in economics focusing on market microstructure and corporate debt events. I teach money and banking and build data products in R and Python.</p>
+
+            <!-- Example of two plots/images side by side like the reference layout -->
+            <div class="row">
+              <div class="col-md-12">
+                <!-- Replace these placeholders with your images or remove the block -->
+                <img src="plot1.png" class="img-fluid mb-3" alt="Example figure 1">
+                <img src="plot2.png" class="img-fluid" alt="Example figure 2">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Research -->
+      <div class="tab-pane fade" id="research" role="tabpanel" aria-labelledby="research-tab" tabindex="0">
+        <h2 class="h4 mb-3">Research</h2>
+        <p class="mb-3">Brief summary of research interests. Replace placeholders below with your own items.</p>
+
         <div class="mb-4">
-          <h3 class="h5 mb-1">Working Papers</h3>
+          <h3 class="h5 mb-1">Working papers</h3>
           <ul class="mb-0">
-            <li><strong>Title of Paper A</strong> — short one-line description.</li>
-            <li><strong>Title of Paper B</strong> — short one-line description.</li>
+            <li><strong>Equity Market Reactions to Corporate Debt IPOs</strong> — event-study with Bayesian estimation.</li>
+            <li><strong>Title B</strong> — one-line description.</li>
           </ul>
         </div>
 
         <div class="mb-4">
           <h3 class="h5 mb-1">Projects</h3>
           <ul class="mb-0">
-            <li><strong>Project Name</strong> — what you’re analyzing; data; method.</li>
+            <li><strong>Rivera Engineering</strong> — incremental profit vs battery-life improvement modeling.</li>
           </ul>
         </div>
       </div>
@@ -69,32 +104,33 @@
       <!-- Teaching -->
       <div class="tab-pane fade" id="teaching" role="tabpanel" aria-labelledby="teaching-tab" tabindex="0">
         <h2 class="h4 mb-3">Teaching</h2>
-        <p class="mb-3">Short statement about courses and interests in teaching.</p>
+        <p class="mb-3">Short statement about courses and teaching interests.</p>
 
         <div class="mb-4">
           <h3 class="h5 mb-1">Courses</h3>
           <ul class="mb-0">
-            <li><strong>Money, Banking, and Monetary Policy</strong> — graduate level.</li>
+            <li><strong>Money, Banking, and Monetary Policy</strong> — graduate.</li>
             <li><strong>Intermediate Microeconomics</strong> — undergraduate.</li>
+            <li><strong>Principles of Macroeconomics</strong> — undergraduate.</li>
           </ul>
         </div>
 
         <div class="mb-4">
           <h3 class="h5 mb-1">Materials</h3>
           <ul class="mb-0">
-            <li>Syllabus, slides, or links (add when ready).</li>
+            <li><a href="#">Syllabus (PDF)</a></li>
+            <li><a href="#">Slides</a></li>
           </ul>
         </div>
       </div>
     </div>
 
     <footer class="mt-5">
-      <!-- Intentionally no Jekyll or GitHub footer text -->
       <div>© <span id="year"></span> Rui Sun</div>
     </footer>
   </main>
 
-  <!-- Bootstrap JS (CDN) -->
+  <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
