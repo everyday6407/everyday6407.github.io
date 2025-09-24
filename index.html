@@ -1,77 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Home</title>
-  <!-- Link to Bootstrap CSS (from smanzan’s site assets) -->
-  <link rel="stylesheet" href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="site_libs/bootstrap-3.3.5/css/bootstrap-theme.min.css" />
-  <!-- (Optional) link to any additional CSS from smanzan’s site if available -->
-  <!-- e.g., <link rel="stylesheet" href="site_libs/your-custom.css" /> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rui Sun</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Minimal custom styles to match a clean academic look -->
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; }
+    .site-header { padding: 2rem 0 1rem; }
+    .site-title { font-size: 1.75rem; font-weight: 600; margin: 0; }
+    .site-subtitle { color:#555; margin-top:.25rem; }
+    .container-narrow { max-width: 900px; }
+    footer { color:#777; font-size:.95rem; padding:2rem 0; }
+    /* remove link underline in nav tabs */
+    .nav-tabs .nav-link { text-decoration: none; }
+  </style>
 </head>
 <body>
-  <!-- Navigation bar -->
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container-fluid">
-      <!-- Brand/name on the left -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!-- Your Name or site title as the brand -->
-        <a class="navbar-brand" href="index.html">Your Name</a>
+
+  <main class="container container-narrow">
+
+    <!-- Header -->
+    <header class="site-header d-flex justify-content-between align-items-end">
+      <div>
+        <h1 class="site-title">Rui Sun</h1>
+        <div class="site-subtitle">Economics · Data Science · Teaching</div>
       </div>
-      <!-- Collapsible nav links on the right -->
-      <div class="collapse navbar-collapse" id="main-nav">
-        <ul class="nav navbar-nav navbar-right">
-          <!-- Only Research and Teaching tabs as requested -->
-          <li><a href="#research">Research</a></li>
-          <li><a href="#teaching">Teaching</a></li>
-        </ul>
+    </header>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mt-3" id="mainTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="research-tab" data-bs-toggle="tab" data-bs-target="#research" type="button" role="tab" aria-controls="research" aria-selected="true">Research</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="teaching-tab" data-bs-toggle="tab" data-bs-target="#teaching" type="button" role="tab" aria-controls="teaching" aria-selected="false">Teaching</button>
+      </li>
+    </ul>
+
+    <!-- Tab contents -->
+    <div class="tab-content pt-4" id="mainTabsContent">
+      <!-- Research -->
+      <div class="tab-pane fade show active" id="research" role="tabpanel" aria-labelledby="research-tab" tabindex="0">
+        <h2 class="h4 mb-3">Research</h2>
+        <p class="mb-3">Brief summary of interests or current work goes here. You can replace all placeholder items below.</p>
+
+        <!-- sample structure; keep format, replace content -->
+        <div class="mb-4">
+          <h3 class="h5 mb-1">Working Papers</h3>
+          <ul class="mb-0">
+            <li><strong>Title of Paper A</strong> — short one-line description.</li>
+            <li><strong>Title of Paper B</strong> — short one-line description.</li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="h5 mb-1">Projects</h3>
+          <ul class="mb-0">
+            <li><strong>Project Name</strong> — what you’re analyzing; data; method.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Teaching -->
+      <div class="tab-pane fade" id="teaching" role="tabpanel" aria-labelledby="teaching-tab" tabindex="0">
+        <h2 class="h4 mb-3">Teaching</h2>
+        <p class="mb-3">Short statement about courses and interests in teaching.</p>
+
+        <div class="mb-4">
+          <h3 class="h5 mb-1">Courses</h3>
+          <ul class="mb-0">
+            <li><strong>Money, Banking, and Monetary Policy</strong> — graduate level.</li>
+            <li><strong>Intermediate Microeconomics</strong> — undergraduate.</li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="h5 mb-1">Materials</h3>
+          <ul class="mb-0">
+            <li>Syllabus, slides, or links (add when ready).</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </nav>
 
-  <!-- Main page content (minimal homepage content) -->
-  <div class="container">
-    <!-- Optional welcome/introduction section -->
-    <section id="welcome">
-      <h1>Welcome!</h1>
-      <p>This is a brief introduction or welcome message on your homepage. <!-- You can keep this minimal or remove entirely --></p>
-    </section>
+    <footer class="mt-5">
+      <!-- Intentionally no Jekyll or GitHub footer text -->
+      <div>© <span id="year"></span> Rui Sun</div>
+    </footer>
+  </main>
 
-    <!-- Research section -->
-    <section id="research">
-      <h2>Research</h2>
-      <p><!-- You can add an introductory sentence about your research here --></p>
-      <ul>
-        <li>Research Item 1 – <em>describe your publication or project here</em></li>
-        <li>Research Item 2 – <em>another publication or project description</em></li>
-        <!-- Add more list items as needed for your research outputs -->
-      </ul>
-    </section>
-
-    <!-- Teaching section -->
-    <section id="teaching" style="margin-top: 50px;">
-      <h2>Teaching</h2>
-      <p><!-- You can add a sentence introducing your teaching or courses here --></p>
-      <ul>
-        <li>Teaching Item 1 – <em>course or teaching experience details here</em></li>
-        <li>Teaching Item 2 – <em>another course or teaching detail</em></li>
-        <!-- Add more list items as needed for your teaching experience -->
-      </ul>
-    </section>
-  </div>
-
-  <!-- Include jQuery and Bootstrap JS (from smanzan’s site assets) -->
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-  <!-- (Optional) include any additional scripts from smanzan’s site if needed -->
-  <!-- e.g., <script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script> -->
+  <!-- Bootstrap JS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
